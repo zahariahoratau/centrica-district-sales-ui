@@ -1,0 +1,88 @@
+﻿<Window x:Class="DistrictSales.UI.Presentation.Views.Districts.DistrictCreateView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:DistrictSales.UI.Presentation.Views.Districts"
+        mc:Ignorable="d"
+        Title="DistrictCreateView" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0" Text="Create District" FontSize="18" HorizontalAlignment="Center" />
+
+        <!-- Name -->
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Name:" VerticalAlignment="Center" />
+                <TextBox x:Name="Name" VerticalAlignment="Center" Margin="10" Width="100">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+                                <Trigger Property="Validation.HasError" Value="True">
+                                    <Setter Property="BorderBrush" Value="Red" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </StackPanel>
+            <TextBlock Text="{Binding (Validation.Errors)[0].ErrorContent, ElementName=Name}" Foreground="Red" />
+        </StackPanel>
+
+        <!-- Is Active -->
+        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Is Active:" VerticalAlignment="Center" />
+                <CheckBox x:Name="IsActive" VerticalAlignment="Center" Margin="10" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Number of Stores -->
+        <StackPanel Grid.Row="3" Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Number of Stores:" VerticalAlignment="Center" />
+                <TextBox x:Name="NumberOfStores" VerticalAlignment="Center" Margin="10" Width="100">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+                                <Trigger Property="Validation.HasError" Value="True">
+                                    <Setter Property="BorderBrush" Value="Red" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </StackPanel>
+            <TextBlock Text="{Binding (Validation.Errors)[0].ErrorContent, ElementName=NumberOfStores}" Foreground="Red" />
+        </StackPanel>
+
+        <!-- Primary Salesperson -->
+        <StackPanel Grid.Row="4" Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Primary Salesperson:" VerticalAlignment="Center" />
+                <ComboBox
+                    ItemsSource="{Binding PossibleSalespeople}"
+                    SelectedItem="{Binding PrimarySalesperson}"
+                    DisplayMemberPath="Email"
+                    VerticalAlignment="Center"
+                    Margin="10" Width="100" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="7" Orientation="Horizontal" Margin="10">
+            <Button x:Name="CreateDistrictCommand" Content="Create" Width="100" Margin="0,0,10,0" />
+            <Button x:Name="CancelCommand" Content="Cancel" Width="100" />
+        </StackPanel>
+    </Grid>
+</Window>
+
