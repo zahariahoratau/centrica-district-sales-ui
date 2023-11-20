@@ -15,7 +15,7 @@ public class DistrictUpdateViewModel : Screen, IDataErrorInfo
 
     public DistrictUpdateViewModel(Guid selectedDistrictId)
     {
-        _districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+        _districtSalesApi = SdkHelper.GetDistrictSalesApi();
 
         _selectedDistrict = _districtSalesApi
                 .GetDistrictAsync(selectedDistrictId)

@@ -14,7 +14,7 @@ public class DistrictCreateViewModel : Screen, IDataErrorInfo
 
     public DistrictCreateViewModel()
     {
-        _districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+        _districtSalesApi = SdkHelper.GetDistrictSalesApi();
         _possibleSalespeople = new BindableCollection<Salesperson>(
             _districtSalesApi
                 .GetSalespeopleAsync()

@@ -12,7 +12,7 @@ public class DistrictRemoveSecondarySalespersonViewModel : Screen
 
     public DistrictRemoveSecondarySalespersonViewModel(Guid selectedDistrictId)
     {
-        _districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+        _districtSalesApi = SdkHelper.GetDistrictSalesApi();
 
         _selectedDistrict = _districtSalesApi
                 .GetDistrictAsync(selectedDistrictId)

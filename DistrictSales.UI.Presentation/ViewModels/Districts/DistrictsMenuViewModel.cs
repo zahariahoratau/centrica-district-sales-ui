@@ -16,7 +16,7 @@ public class DistrictsMenuViewModel : Conductor<Screen>.Collection.OneActive
     {
         _windowManager = windowManager;
 
-        _districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+        _districtSalesApi = SdkHelper.GetDistrictSalesApi();
         _districts =
             new ObservableCollection<District>(
                 _districtSalesApi

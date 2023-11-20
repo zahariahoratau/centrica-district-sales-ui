@@ -11,7 +11,7 @@ namespace DistrictSales.UI.Presentation.ViewModels.Salespeople;
 
 public class SalespersonCreateViewModel : Screen, IDataErrorInfo
 {
-    private readonly IDistrictSalesApi _districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+    private readonly IDistrictSalesApi _districtSalesApi = SdkHelper.GetDistrictSalesApi();
 
     private string _firstName;
     private string _lastName;

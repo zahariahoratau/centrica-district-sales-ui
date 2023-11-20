@@ -14,7 +14,7 @@ public class SalespersonUpdateViewModel : Screen, IDataErrorInfo
 
     public SalespersonUpdateViewModel(Guid selectedSalespersonId)
     {
-        _districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+        _districtSalesApi = SdkHelper.GetDistrictSalesApi();
         _selectedSalesperson = _districtSalesApi
                 .GetSalespersonAsync(selectedSalespersonId)
                 .Result.Content

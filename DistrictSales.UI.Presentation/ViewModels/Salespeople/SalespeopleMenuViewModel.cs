@@ -16,7 +16,7 @@ public class SalespeopleMenuViewModel : Conductor<Screen>.Collection.OneActive
     {
         _windowManager = windowManager;
 
-        _districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+        _districtSalesApi = SdkHelper.GetDistrictSalesApi();
         _salespeople =
             new ObservableCollection<Salesperson>(
                 _districtSalesApi.GetSalespeopleAsync()

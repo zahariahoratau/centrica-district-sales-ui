@@ -7,7 +7,7 @@ public class SalespersonDetailsViewModel : Screen
 {
     public SalespersonDetailsViewModel(Guid selectedSalespersonId)
     {
-        var districtSalesApi = RestServiceFetcher.GetDistrictSalesApi();
+        var districtSalesApi = SdkHelper.GetDistrictSalesApi();
         SelectedSalesperson = districtSalesApi
                 .GetSalespersonAsync(selectedSalespersonId)
                 .Result.Content?
