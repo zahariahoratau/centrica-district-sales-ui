@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\DistrictSales\DistrictSales\DistrictSales.Api.Dto\DistrictSales.Api.Dto.csproj" />
+    <ProjectReference Include="..\..\..\DistrictSales\DistrictSales\DistrictSales.Api.Sdk\DistrictSales.Api.Sdk.csproj" />
     <ProjectReference Include="..\DistrictSales.UI.Domain\DistrictSales.UI.Domain.csproj" />
   </ItemGroup>
 
