@@ -4,11 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using Caliburn.Micro;
-using DistrictSales.Api.Dto.V1.Responses;
-using DistrictSales.UI.Domain.Models;
-using DistrictSales.UI.Presentation.Helpers;
-using DistrictSales.UI.Presentation.Mapping;
-using DistrictSales.UI.Presentation.Sdk;
 using Refit;
 
 namespace DistrictSales.UI.Presentation.ViewModels.Districts;

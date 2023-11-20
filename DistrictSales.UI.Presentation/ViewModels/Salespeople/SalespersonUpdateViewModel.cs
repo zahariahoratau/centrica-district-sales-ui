@@ -4,10 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Windows;
 using Caliburn.Micro;
-using DistrictSales.UI.Domain.Models;
-using DistrictSales.UI.Presentation.Helpers;
-using DistrictSales.UI.Presentation.Mapping;
-using DistrictSales.UI.Presentation.Sdk;
 using Refit;
 
 namespace DistrictSales.UI.Presentation.ViewModels.Salespeople;
@@ -125,7 +121,7 @@ public class SalespersonUpdateViewModel : Screen, IDataErrorInfo
 
     public void UpdateSalespersonCommand()
     {
-        ApiResponse<object> apiResponse = _districtSalesApi
+        IApiResponse apiResponse = _districtSalesApi
             .UpdateSalespersonAsync(_selectedSalesperson.Id, this.MapToUpdateSalespersonRequest())
             .Result;
 

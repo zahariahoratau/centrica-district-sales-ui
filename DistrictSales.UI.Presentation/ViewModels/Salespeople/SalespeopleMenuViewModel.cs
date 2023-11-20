@@ -3,10 +3,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
-using DistrictSales.UI.Domain.Models;
-using DistrictSales.UI.Presentation.Helpers;
-using DistrictSales.UI.Presentation.Mapping;
-using DistrictSales.UI.Presentation.Sdk;
 using Refit;
 
 namespace DistrictSales.UI.Presentation.ViewModels.Salespeople;
@@ -94,7 +90,7 @@ public class SalespeopleMenuViewModel : Conductor<Screen>.Collection.OneActive
         if (result != MessageBoxResult.Yes)
             return;
 
-        ApiResponse<object> apiResponse = _districtSalesApi.DeleteSalespersonAsync(SelectedSalesperson.Id).Result;
+        IApiResponse apiResponse = _districtSalesApi.DeleteSalespersonAsync(SelectedSalesperson.Id).Result;
 
         if (!apiResponse.IsSuccessStatusCode)
         {

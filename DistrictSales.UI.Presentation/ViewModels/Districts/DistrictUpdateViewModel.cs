@@ -5,10 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using Caliburn.Micro;
-using DistrictSales.UI.Domain.Models;
-using DistrictSales.UI.Presentation.Helpers;
-using DistrictSales.UI.Presentation.Mapping;
-using DistrictSales.UI.Presentation.Sdk;
 using Refit;
 
 namespace DistrictSales.UI.Presentation.ViewModels.Districts;
@@ -111,7 +107,7 @@ public class DistrictUpdateViewModel : Screen, IDataErrorInfo
 
     public void UpdateDistrictCommand()
     {
-        ApiResponse<object> apiResponse = _districtSalesApi
+        IApiResponse apiResponse = _districtSalesApi
             .UpdateDistrictAsync(_selectedDistrict.Id, this.MapToUpdateDistrictRequest())
             .Result;
 

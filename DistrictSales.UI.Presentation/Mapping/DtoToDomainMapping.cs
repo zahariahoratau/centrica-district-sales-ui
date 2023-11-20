@@ -1,6 +1,4 @@
 using System.Linq;
-using DistrictSales.Api.Dto.V1.Responses;
-using DistrictSales.UI.Domain.Models;
 
 namespace DistrictSales.UI.Presentation.Mapping;
 

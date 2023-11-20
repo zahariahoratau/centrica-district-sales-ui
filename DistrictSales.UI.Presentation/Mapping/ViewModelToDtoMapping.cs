@@ -1,5 +1,4 @@
 using System;
-using DistrictSales.Api.Dto.V1.Requests;
 using DistrictSales.UI.Presentation.ViewModels.Districts;
 using DistrictSales.UI.Presentation.ViewModels.Salespeople;
 

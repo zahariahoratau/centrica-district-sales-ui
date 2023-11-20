@@ -4,10 +4,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
-using DistrictSales.UI.Domain.Models;
-using DistrictSales.UI.Presentation.Helpers;
-using DistrictSales.UI.Presentation.Mapping;
-using DistrictSales.UI.Presentation.Sdk;
 using Refit;
 
 namespace DistrictSales.UI.Presentation.ViewModels.Districts;
@@ -89,7 +85,7 @@ public class DistrictAddSecondarySalespersonViewModel : Screen
         if (SelectedSecondarySalesperson is null)
             return;
 
-        ApiResponse<object> apiResponse = _districtSalesApi
+        IApiResponse apiResponse = _districtSalesApi
             .AddSecondarySalespersonAsync(SelectedDistrict.Id, SelectedSecondarySalesperson.Id)
             .Result;
 

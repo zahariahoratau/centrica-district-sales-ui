@@ -2,10 +2,6 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using Caliburn.Micro;
-using DistrictSales.UI.Domain.Models;
-using DistrictSales.UI.Presentation.Helpers;
-using DistrictSales.UI.Presentation.Mapping;
-using DistrictSales.UI.Presentation.Sdk;
 using Refit;
 
 namespace DistrictSales.UI.Presentation.ViewModels.Districts;
@@ -79,7 +75,7 @@ public class DistrictRemoveSecondarySalespersonViewModel : Screen
         if (result is not MessageBoxResult.Yes)
             return;
 
-        ApiResponse<object> apiResponse = _districtSalesApi
+        IApiResponse apiResponse = _districtSalesApi
             .RemoveSecondarySalespersonAsync(SelectedDistrict.Id, SelectedSecondarySalesperson.Id)
             .Result;
 
